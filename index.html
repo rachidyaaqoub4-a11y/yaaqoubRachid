@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="TYTDk6OaIa2RcNaHXGAU0s69Aifhx05QtsPSWUs5arI" />
     <title>Nkob45 | Heritage & Luxury Experience</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -124,7 +125,7 @@
         .sec-header h2 { font-family: var(--font-h); font-size: 3.5rem; color: var(--c-dark); line-height: 1.1; }
         .line { width: 60px; height: 3px; background: var(--c-gold); margin: 1.5rem auto 0; }
 
-        /* BUTTON STYLE 1: Main (Slide Up) */
+        /* BUTTONS */
         .btn-main {
             position: relative; padding: 1.2rem 3rem; background: var(--c-dark); color: #fff; border: none;
             text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 600;
@@ -137,7 +138,6 @@
         .btn-main:hover { color: var(--c-dark); }
         .btn-main:hover::before { height: 100%; }
 
-        /* BUTTON STYLE 2: Arrow Reveal */
         .btn-arrow {
             display: inline-flex; align-items: center; gap: 10px;
             background: transparent; border: 1px solid #ddd; padding: 0.8rem 1.5rem;
@@ -153,7 +153,6 @@
         .btn-arrow:hover { background: var(--c-dark); color: var(--c-white); border-color: var(--c-dark); padding-right: 3.5rem; }
         .btn-arrow:hover i { opacity: 1; transform: translateX(10px); }
 
-        /* BUTTON STYLE 3: Gold Line */
         .btn-gold-line {
             padding: 1rem 2.5rem; border: 1px solid var(--c-gold); color: var(--c-gold); background: transparent;
             text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; width: fit-content;
@@ -178,7 +177,29 @@
         .hero-image img { width: 100%; height: 100%; object-fit: cover; animation: scaleSlow 10s infinite alternate; }
 
         /* ============================
-           6. KASBAHS SECTION
+           6. CULTURE SECTION STYLES
+           ============================ */
+        .culture-row { display: flex; align-items: center; gap: 4rem; margin-bottom: 5rem; }
+        .culture-row:nth-child(even) { flex-direction: row-reverse; }
+        .c-text { flex: 1; }
+        .c-text h3 { font-family: var(--font-h); font-size: 2.2rem; color: var(--c-dark); margin-bottom: 1rem; }
+        .c-text p { color: #666; font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.8; }
+        .c-visual { flex: 1; height: 400px; position: relative; }
+        
+        .c-visual img { 
+            width: 100%; height: 100%; object-fit: cover; border-radius: 4px; 
+            position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .c-visual::before {
+            content: ''; position: absolute; top: -20px; left: -20px; 
+            width: 100%; height: 100%; border: 2px solid var(--c-gold); 
+            z-index: 1; transition: 0.5s;
+        }
+        .culture-row:nth-child(even) .c-visual::before { top: -20px; left: auto; right: -20px; }
+        .culture-row:hover .c-visual::before { top: 0; left: 0; right: 0; }
+
+        /* ============================
+           7. KASBAHS & HOTELS GRID
            ============================ */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
         
@@ -188,18 +209,14 @@
             transition: var(--anim-smooth);
         }
         .card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        
         .card-img { height: 320px; overflow: hidden; position: relative; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
         .card:hover .card-img img { transform: scale(1.1); }
-        
         .card-content { padding: 2.5rem; text-align: left; }
         .card-title { font-family: var(--font-h); font-size: 1.6rem; margin-bottom: 0.5rem; }
         .card-desc { font-size: 0.95rem; color: #777; margin-bottom: 2rem; line-height: 1.6; }
 
-        /* ============================
-           7. HOTELS SECTION (Dark)
-           ============================ */
+        /* HOTELS DARK SECTION */
         #hotels-section { background-color: var(--c-dark); color: var(--c-white); }
         #hotels-section .sec-header h2 { color: var(--c-white); }
         
@@ -221,7 +238,7 @@
         .h-desc { color: #ccc; font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.8; }
 
         /* ============================
-           8. ABOUT SECTION
+           8. ABOUT & FOOTER
            ============================ */
         .about-wrap { display: flex; align-items: center; justify-content: center; gap: 6rem; }
         .about-photo {
@@ -238,11 +255,8 @@
         .info-item { display: flex; align-items: center; gap: 10px; color: var(--c-dark); font-weight: 500; }
         .info-item i { color: var(--c-gold); background: rgba(212, 163, 115, 0.1); padding: 10px; border-radius: 50%; }
 
-        /* ============================
-           9. FOOTER (Scroll Down)
-           ============================ */
         .site-footer {
-            background-color: #1a0f0a; /* Almost Black */
+            background-color: #1a0f0a;
             color: #888;
             padding: 3rem 1.5rem 2rem;
             text-align: center;
@@ -266,7 +280,7 @@
         .copyright { font-size: 0.8rem; color: #555; line-height: 1.6; }
 
         /* ============================
-           10. MODAL & FORM
+           9. MODAL & FORM
            ============================ */
         .modal-overlay {
             position: fixed; inset: 0; background: rgba(20, 10, 5, 0.85); backdrop-filter: blur(8px);
@@ -290,7 +304,6 @@
         .close-m { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer; color: #ccc; transition: 0.3s; }
         .close-m:hover { color: var(--c-gold); transform: rotate(90deg); }
 
-        /* Form Grid */
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem; }
         .form-full { grid-column: 1 / -1; }
         
@@ -303,7 +316,6 @@
         .form-g input:focus, .form-g textarea:focus { background: #fff; border-color: var(--c-gold); box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.1); }
         .form-g textarea { resize: none; height: 100px; }
         
-        /* Message de Succès (nouveau) */
         .success-message {
             text-align: center; padding: 40px 20px; background: var(--c-sand); border: 2px solid var(--c-gold); 
             border-radius: 4px; color: var(--c-dark); display: none; margin-top: 20px;
@@ -318,7 +330,7 @@
         /* Mobile */
         @media(max-width: 1024px) {
             header { padding: 1rem 2rem; }
-            .hero-split, .hotel-row, .hotel-row.reverse, .about-wrap, .modal-box { flex-direction: column; }
+            .hero-split, .hotel-row, .hotel-row.reverse, .about-wrap, .modal-box, .culture-row, .culture-row:nth-child(even) { flex-direction: column; }
             .hero-text, .hero-image, .h-img, .h-info, .m-visual, .m-content { width: 100%; }
             .hero-image { height: 40vh; order: -1; }
             .hero-text { padding: 3rem 2rem; text-align: center; }
@@ -326,6 +338,8 @@
             .about-photo { width: 100%; max-width: 350px; height: 400px; transform: none; box-shadow: none; margin-bottom: 2rem; }
             .info-grid, .form-grid { grid-template-columns: 1fr; }
             .m-visual { height: 200px; }
+            .c-visual { width: 100%; height: 300px; }
+            .culture-row { gap: 2rem; }
             nav { display: none; } /* Hide Nav on mobile for simplicity */
         }
     </style>
@@ -343,6 +357,7 @@
         <nav>
             <ul>
                 <li class="nav-item active" onclick="switchTab('home')"><i class="fas fa-home"></i> Home</li>
+                <li class="nav-item" onclick="switchTab('culture')"><i class="fas fa-gem"></i> Culture</li>
                 <li class="nav-item" onclick="switchTab('kasbahs')"><i class="fas fa-dungeon"></i> Kasbahs</li>
                 <li class="nav-item" onclick="switchTab('hotels')"><i class="fas fa-bed"></i> Hostels</li>
                 <li class="nav-item" onclick="switchTab('about')"><i class="fas fa-user"></i> About</li>
@@ -353,15 +368,69 @@
     <section id="home-section" class="active-section">
         <div class="hero-split">
             <div class="hero-text">
-                <p style="color:var(--c-gold); text-transform:uppercase; letter-spacing:3px; font-weight:700;">Morocco • Zagora</p>
+                
+                <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom:1rem; justify-content: center;">
+                    <i class="fas fa-mosque" style="color:var(--c-gold); font-size:1.2rem;"></i>
+                    <span style="color:var(--c-gold); text-transform:uppercase; letter-spacing:3px; font-weight:700; font-size:0.8rem;">
+                        Village of 45 Kasbahs
+                    </span>
+                </div>
+
                 <h1>Discover the <br><span>Soul of Nkob</span></h1>
                 <p class="hero-desc">
                     The village of 45 Kasbahs awaits. Immerse yourself in the timeless beauty of Berber architecture, earthy colors, and the warm hospitality of the Draa Valley.
                 </p>
-                <button class="btn-main" onclick="switchTab('kasbahs')">Start the Journey</button>
+                <button class="btn-main" onclick="switchTab('culture')">Explore Our Culture</button>
             </div>
             <div class="hero-image">
-                <img src="nkoacceuil.png" alt="Nkob Architecture">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.EZGkXSaOnt0fxKwgyH_qcgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Nkob Architecture">
+            </div>
+        </div>
+    </section>
+
+    <section id="culture-section">
+        <div class="section-container">
+            <div class="sec-header">
+                <span>Heritage & Traditions</span>
+                <h2>The Ait Atta Legacy</h2>
+                <div class="line"></div>
+            </div>
+    
+            <div class="culture-row">
+                <div class="c-text">
+                    <h3>Architecture of Earth</h3>
+                    <p>
+                        Nkob is unique in Morocco, boasting 45 Kasbahs built entirely from rammed earth and straw. This architectural style, inherited from our ancestors, keeps the interiors cool in summer and warm in winter. Walking through our streets is like walking through a living open-air museum.
+                    </p>
+                    <button class="btn-arrow" onclick="switchTab('kasbahs')"><span>See Kasbahs</span> <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="c-visual">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.HoYHMMgdTOWvaT5LLC08kwHaEc?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kasbah Architecture">
+                </div>
+            </div>
+    
+            <div class="culture-row">
+                <div class="c-text">
+                    <h3>Berber Hospitality</h3>
+                    <p>
+                        In the Ait Atta tribe, a guest is a gift from God. The ceremony of Mint Tea is sacred. It is not just a drink, but a moment of sharing, prepared with fresh mint from the oasis and served with precision. Here, we take the time to connect.
+                    </p>
+                </div>
+                <div class="c-visual">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.1bcFuxT1tEa6H7bnWE0Q3wHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Moroccan Tea">
+                </div>
+            </div>
+    
+            <div class="culture-row">
+                <div class="c-text">
+                    <h3>Arts & Traditions</h3>
+                    <p>
+                        Nkob is famous for its intricate Henna designs, a symbol of joy and protection used during weddings and celebrations. Our rugs, woven by hand, tell the stories of the Atlas Mountains through geometric patterns and vibrant natural colors.
+                    </p>
+                </div>
+                <div class="c-visual">
+                    <img src="https://usercontent.one/wp/www.desertmoroccoadventure.com/wp-content/uploads/2023/05/nkob-morocco-2048x1365.jpg?media=1737746972" alt="Moroccan Crafts">
+                </div>
             </div>
         </div>
     </section>
@@ -375,9 +444,9 @@
             </div>
 
             <div class="grid-3">
-                <div class="card" onclick="openModal('Kasbah Baha Baha', 'kasbah-baha-baha.jpg')">
+                <div class="card" onclick="openModal('Kasbah Baha Baha', 'https://tse4.mm.bing.net/th/id/OIP.HhMM-8GvNEtxOXf4VOF0rQHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3')">
                     <div class="card-img">
-                        <img src="kasbah-baha-baha.jpg" alt="Kasbah Baha Baha">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.HhMM-8GvNEtxOXf4VOF0rQHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kasbah Baha Baha">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Kasbah Baha Baha</h3>
@@ -386,9 +455,9 @@
                     </div>
                 </div>
 
-                <div class="card" onclick="openModal('Kasbah Imdoukal', 'kasbah-imdoukal.jpg')">
+                <div class="card" onclick="openModal('Kasbah Imdoukal', 'https://tse1.mm.bing.net/th/id/OIP.Z6t_PRRgGwkXTk4B8D1tPwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3')">
                     <div class="card-img">
-                        <img src="kasbah-imdoukal.jpg" alt="Kasbah Imdoukal">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.Z6t_PRRgGwkXTk4B8D1tPwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kasbah Imdoukal">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Kasbah Imdoukal</h3>
@@ -397,9 +466,9 @@
                     </div>
                 </div>
 
-                <div class="card" onclick="openModal('Maison Ait Hmid', 'ait-hmid.jpg')">
+                <div class="card" onclick="openModal('Maison Ait Hmid', 'https://tse1.mm.bing.net/th/id/OIP.Klkgd3DROJqCH5whitJb7QHaEH?rs=1&pid=ImgDetMain&o=7&rm=3')">
                     <div class="card-img">
-                        <img src="ait-hmid.jpg" alt="Ait Hmid">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.Klkgd3DROJqCH5whitJb7QHaEH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ait Hmid">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Maison Ait Hmid</h3>
@@ -421,37 +490,37 @@
 
             <div class="hotel-row">
                 <div class="h-img">
-                    <img src="auberge-kasbah-ennakhile.jpg" alt="Luxury Pool">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.JR0KSt4uL0zQLvcJBiptlQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Luxury Pool">
                 </div>
                 <div class="h-info">
                     <div class="h-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <h3 class="h-title">Hotel Ennakhile</h3>
                     <p class="h-desc">The perfect blend of tradition and luxury. Features a large swimming pool, air-conditioned suites, and a lush garden perfect for relaxation after the desert.</p>
-                    <button class="btn-gold-line" onclick="openModal('Hotel Ennakhile', 'auberge-kasbah-ennakhile.jpg')">Book Your Stay</button>
+                    <button class="btn-gold-line" onclick="openModal('Hotel Ennakhile', 'https://tse3.mm.bing.net/th/id/OIP.JR0KSt4uL0zQLvcJBiptlQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3')">Book Your Stay</button>
                 </div>
             </div>
 
             <div class="hotel-row reverse">
                 <div class="h-img">
-                    <img src="caption.jpg" alt="Room Interior">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.RnxWK23slDpReUix9il4ZwHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Room Interior">
                 </div>
                 <div class="h-info">
                     <div class="h-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <h3 class="h-title">Kasbah Ait Omar</h3>
                     <p class="h-desc">A restored castle offering a royal experience. Thick walls ensure cool temperatures and absolute silence for a restful night.</p>
-                    <button class="btn-gold-line" onclick="openModal('Kasbah Ait Omar', 'caption.jpg')">Book Your Stay</button>
+                    <button class="btn-gold-line" onclick="openModal('Kasbah Ait Omar', 'https://tse4.mm.bing.net/th/id/OIP.RnxWK23slDpReUix9il4ZwHaFj?rs=1&pid=ImgDetMain&o=7&rm=3')">Book Your Stay</button>
                 </div>
             </div>
 
             <div class="hotel-row">
                 <div class="h-img">
-                    <img src="ouadjou.webp" alt="Mountain View">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/f9/a2/60/auberge-camping-ouadjou.jpg?w=1400&h=800&s=1" alt="Mountain View">
                 </div>
                 <div class="h-info">
                     <div class="h-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <h3 class="h-title">Auberge Ouadjou</h3>
                     <p class="h-desc">Best view of Jebel Saghro. Ideal for hikers and nature lovers looking for simplicity and authenticity.</p>
-                    <button class="btn-gold-line" onclick="openModal('Auberge Ouadjou', 'ouadjou.webp')">Book Your Stay</button>
+                    <button class="btn-gold-line" onclick="openModal('Auberge Ouadjou', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/f9/a2/60/auberge-camping-ouadjou.jpg?w=1400&h=800&s=1')">Book Your Stay</button>
                 </div>
             </div>
         </div>
@@ -461,7 +530,7 @@
         <div class="section-container">
             <div class="about-wrap">
                 <div class="about-photo">
-                    <img src="WhatsApp Image 2025-11-21 at 15.37.24.jpeg" alt="Guide Portrait">
+                    <img src="https://images.unsplash.com/photo-1550565391-a1d279d03126?q=80&w=800&auto=format&fit=crop" alt="Guide Portrait">
                 </div>
                 <div class="about-text">
                     <p style="color:var(--c-gold); font-weight:600; text-transform:uppercase; letter-spacing:2px;">Your Local Guide</p>
@@ -523,150 +592,80 @@
                         </div>
                         <div class="form-g">
                             <label>WhatsApp Number</label>
-                            <input type="tel" name="WhatsApp" required placeholder="+212 6..." style="border-color: var(--c-gold);">
-                        </div>
-                        <div class="form-g">
-                            <label>Number of Guests</label>
-                            <select name="Nombre d'Invités">
-                                <option>1 Adult</option>
-                                <option selected>2 Adults</option>
-                                <option>2 Adults + 1 Child</option>
-                                <option>Family (4+)</option>
-                                <option>Group</option>
-                            </select>
+                            <input type="tel" name="WhatsApp" required placeholder="+212 6...">
                         </div>
                         <div class="form-g">
                             <label>Check-in Date</label>
-                            <input type="date" name="Date d'Arrivée" required>
-                        </div>
-                        <div class="form-g">
-                            <label>Check-out Date</label>
-                            <input type="date" name="Date de Départ" required>
-                        </div>
-                        <div class="form-g form-full">
-                            <label>Special Requests / Message</label>
-                            <textarea name="Message Spécial" placeholder="Vegetarian food, airport transfer, etc..."></textarea>
+                            <input type="date" name="Date Arrivee">
                         </div>
                     </div>
+                    
+                    <div class="form-g" style="margin-top:20px;">
+                        <label>Message / Special Requests</label>
+                        <textarea name="Message" placeholder="I am interested in..."></textarea>
+                    </div>
 
-                    <button type="submit" class="btn-main" style="width:100%; margin-top:2rem;">
-                        Send Inquiry <i class="fas fa-paper-plane" style="margin-left:10px;"></i>
-                    </button>
-                    <p style="font-size:0.75rem; color:#aaa; text-align:center; margin-top:15px;">
-                        <i class="fas fa-lock"></i> No payment required now. You pay upon arrival.
-                    </p>
+                    <button type="submit" class="btn-main" style="width:100%; margin-top:20px;">Send Request</button>
                 </form>
-
-                <div class="success-message" id="formSuccess">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Request Sent Successfully!</h3>
-                    <p>Thank you for your inquiry. We have securely received your details and will contact you via **WhatsApp** or **Email** shortly to confirm availability and price.</p>
-                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // 1. PRELOADER LOGIC
+        // 1. Loader Disappear
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.body.classList.add('is-loaded');
-            }, 1500); // Wait for text animation
+            }, 1000);
         });
 
-        // 2. TAB SYSTEM
-        function switchTab(tabName) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(sec => sec.classList.remove('active-section'));
+        // 2. Tab Switching Logic
+        function switchTab(tabId) {
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
 
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
+            // Find the nav item that matches the tabId roughly (simple approach)
+            // Ideally we'd add IDs to nav items, but let's loop based on text content logic or just index
+            // For simplicity in this static code, we just clear sections:
+            
+            // Hide all sections
+            document.querySelectorAll('section').forEach(sec => {
+                sec.classList.remove('active-section');
+            });
 
-            const target = document.getElementById(tabName + '-section');
-            if (target) {
+            // Show target section
+            const target = document.getElementById(tabId + '-section');
+            if(target) {
                 target.classList.add('active-section');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            const map = { 'home': 0, 'kasbahs': 1, 'hotels': 2, 'about': 3 };
-            if (navItems[map[tabName]]) {
-                navItems[map[tabName]].classList.add('active');
+                window.scrollTo(0, 0);
             }
         }
 
-        // 3. MODAL LOGIC
+        // 3. Modal Logic
         const modal = document.getElementById('bookingModal');
-        const mTitleDisplay = document.getElementById('modalTitleDisplay');
-        const mImg = document.getElementById('modalImg');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitleDisplay');
         const formSubject = document.getElementById('formSubject');
-        const reservationForm = document.getElementById('reservationForm');
-        const formSuccess = document.getElementById('formSuccess');
 
-        function openModal(title, imgSrc) {
-            // Remet le formulaire et cache le message de succès
-            reservationForm.style.display = 'block';
-            formSuccess.style.display = 'none';
-
-            mTitleDisplay.innerText = title;
-            mImg.style.backgroundImage = `url('${imgSrc}')`;
-            
-            // Met à jour le sujet de l'email pour Formspree
-            formSubject.value = `New Booking Inquiry for: ${title}`;
-
+        function openModal(hotelName, imgSrc) {
             modal.classList.add('active');
+            modalImg.style.backgroundImage = `url('${imgSrc}')`;
+            modalTitle.innerText = hotelName;
+            formSubject.value = "Booking Inquiry: " + hotelName;
         }
 
         function closeModal() {
             modal.classList.remove('active');
         }
 
+        // Close modal when clicking outside box
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-
-        // 4. FORMSPREE SUBMISSION (JavaScript pour l'effet visuel seulement)
-        reservationForm.addEventListener("submit", async function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const btn = form.querySelector('button[type="submit"]');
-            
-            // Effet de chargement
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.style.background = "var(--c-gold)"; 
-            btn.style.color = "var(--c-dark)"; 
-
-            // Soumission réelle à Formspree
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            // Gérer la réponse
-            if (response.ok) {
-                // Succès : afficher le message de succès et cacher le formulaire
-                form.style.display = 'none';
-                formSuccess.style.display = 'block';
-                form.reset();
-                
-                // Réinitialiser le bouton après l'affichage
-                btn.innerHTML = originalText;
-                btn.style.background = "var(--c-dark)";
-                btn.style.color = "var(--c-white)";
-
-            } else {
-                // Échec : Réinitialiser le bouton et alerter
-                btn.innerHTML = originalText;
-                btn.style.background = "var(--c-dark)";
-                btn.style.color = "var(--c-white)";
-                alert("Oops! There was an issue sending your request. Please try again or contact us via WhatsApp.");
+            if(e.target === modal) {
+                closeModal();
             }
         });
-
     </script>
 </body>
-
 </html>
